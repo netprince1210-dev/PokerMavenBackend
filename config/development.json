@@ -1,0 +1,19 @@
+{
+    "host": "192.168.116.126",
+    "port": "8080",
+    "baseURL": "/api/v1",
+    "db": {
+        "url": "mongodb://127.0.0.1:27017/pinpoint"
+    },
+    "JWT_SECRET": "kayden",
+    "mailer": {
+        "service": "gmail",
+        "host": "smtp.gmail.com",
+        "port": 587,
+        "secure": false,
+        "auth": {
+            "user": "ameliagenius3@gmail.com",
+            "pass": "ysyxiprzkjrwzksd"
+        }
+    }
+}

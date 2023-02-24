@@ -1,0 +1,92 @@
+[{
+  "_id": {
+    "$oid": "63acf7d85694cee12634f111"
+  },
+  "type": "category",
+  "content": "Food Truck",
+  "subcategory": [
+    "Asian",
+    "BBQ",
+    "Cuban",
+    "Greek",
+    "Indian"
+  ]
+},{
+  "_id": {
+    "$oid": "63acf8415694cee12634f112"
+  },
+  "type": "category",
+  "content": "Pumpkin Patch",
+  "subcategory": [
+    "Apple Pay",
+    "Cash Only",
+    "Contests",
+    "Google Pay",
+    "Hay Rides"
+  ]
+},{
+  "_id": {
+    "$oid": "63acf9195694cee12634f114"
+  },
+  "type": "category",
+  "content": "Mobile Detailing",
+  "subcategory": [
+    "Apple Pay",
+    "Cash Only",
+    "Google Pay",
+    "Full interior",
+    "Tire Shine"
+  ]
+},{
+  "_id": {
+    "$oid": "63acf9745694cee12634f115"
+  },
+  "type": "category",
+  "content": "Coffee Carts",
+  "subcategory": [
+    "Apple Pay",
+    "Cash Only",
+    "Honey",
+    "Google Pay",
+    "Hot Tea"
+  ]
+},{
+  "_id": {
+    "$oid": "63acf9af5694cee12634f116"
+  },
+  "type": "category",
+  "content": "Fireworks Stand",
+  "subcategory": [
+    "Apple Pay",
+    "Cash Only",
+    "Fountains",
+    "Google Pay",
+    "Rockets"
+  ]
+},{
+  "_id": {
+    "$oid": "63acf9db5694cee12634f117"
+  },
+  "type": "category",
+  "content": "Christmas Tree Lot",
+  "subcategory": [
+    "Apple Pay",
+    "Cash Only",
+    "Delivery",
+    "Google Pay",
+    "Hay Rides"
+  ]
+},{
+  "_id": {
+    "$oid": "63acfa005694cee12634f118"
+  },
+  "type": "category",
+  "content": "Farmers Market",
+  "subcategory": [
+    "Apple Pay",
+    "Cash Only",
+    "Fish",
+    "Google Pay",
+    "Flowers"
+  ]
+}]

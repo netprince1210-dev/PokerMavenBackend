@@ -1,0 +1,715 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "PinPoint RESTful API docs",
+        "version": "v2"
+    },
+    "basePath": "/api/v1",
+    "host": "192.168.116.126:8080",
+    "paths": {
+        "/auth/user/login": {
+            "post": {
+                "summery": "User Login",
+                "tags": [
+                    "Auth Group"
+                ],
+                "parameters": [
+                    {
+                        "name": "userInfo",
+                        "in": "param",
+                        "type": "string",
+                        "description": "User email or Name"
+                    },
+                    {
+                        "name": "password",
+                        "in": "param",
+                        "type": "string",
+                        "description": "User Password"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User Login"
+                    }
+                }
+            }
+        },
+        "/auth/user/register": {
+            "post": {
+                "summery": "User Register",
+                "tags": [
+                    "Auth Group"
+                ],
+                "parameters": [
+                    {
+                        "name": "firstName",
+                        "in": "param",
+                        "description": "First Name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lastName",
+                        "in": "param",
+                        "description": "Last Name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userName",
+                        "in": "param",
+                        "description": "User Name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "birthday",
+                        "in": "param",
+                        "description": "Birthday",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "state",
+                        "in": "param",
+                        "description": "State",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "city",
+                        "in": "param",
+                        "description": "City",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "param",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "param",
+                        "description": "Password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "usertype",
+                        "in": "param",
+                        "description": "User type",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "category",
+                        "in": "param",
+                        "description": "Category",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User Register"
+                    }
+                }
+            }
+        },
+        "/base/categories": {
+            "get": {
+                "summery": "To get Categories on Partner Register",
+                "tags": [
+                    "Base"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Categroies for user register"
+                    }
+                }
+            }
+        },
+        "/base/subcategories/{cid}": {
+            "get": {
+                "summery": "To get Categories on Partner Register",
+                "parameters": [
+                    {
+                        "name": "cid",
+                        "type": "string",
+                        "in": "path",
+                        "description": "category uuid"
+                    }
+                ],
+                "tags": [
+                    "Base"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Categroies for user register"
+                    }
+                }
+            }
+        },
+        "/base/followers": {
+            "get": {
+                "summery": "Get Login User's Followers",
+                "tags": [
+                    "Base"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Categroies for user register"
+                    }
+                }
+            }
+        },
+        "/base/download/{file}": {
+            "post": {
+                "summery": "for download file",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "type": "string",
+                        "name": "file",
+                        "description": "attach file name"
+                    },
+                    {
+                        "name": "type",
+                        "in": "param",
+                        "type": "string",
+                        "description": "file type"
+                    }
+                ],
+                "tags": ["Base"]
+            }
+        },
+        "/contact": {
+            "post": {
+                "summery": "The user sent message on user landing page",
+                "tags": [
+                    "Contact"
+                ],
+                "parameters": [
+                    {
+                        "name": "firstname",
+                        "in": "param",
+                        "type": "string",
+                        "description": "First Name of User"
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "param",
+                        "type": "string",
+                        "description": "Last Name of User"
+                    },
+                    {
+                        "name": "email",
+                        "in": "param",
+                        "type": "string",
+                        "description": "User Email"
+                    },
+                    {
+                        "name": "usertype",
+                        "in": "param",
+                        "type": "string",
+                        "description": "User type (partner or user)"
+                    },
+                    {
+                        "name": "subject",
+                        "in": "param",
+                        "type": "string",
+                        "description": "Message subject"
+                    },
+                    {
+                        "name": "message",
+                        "in": "param",
+                        "type": "string",
+                        "description": "Message content"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Submit message"
+                    }
+                }
+            }
+        },
+        "/mail/compose": {
+            "post": {
+                "summery": "New mail compose",
+                "tags": [
+                    "Mail"
+                ],
+                "parameters": [
+                    {
+                        "name": "to",
+                        "in": "param",
+                        "type": "string",
+                        "description": "Destination Username or mail address"
+                    },
+                    {
+                        "name": "notice",
+                        "in": "param",
+                        "type": "boolean",
+                        "description": "To notice flag that receiver recorgnize"
+                    },
+                    {
+                        "name": "subject",
+                        "in": "param",
+                        "type": "string",
+                        "description": "Subject of Mail"
+                    },
+                    {
+                        "name": "message",
+                        "in": "param",
+                        "type": "string",
+                        "description": "Mail content"
+                    },
+                    {
+                        "name": "files",
+                        "in": "param",
+                        "type": "file",
+                        "description": "attach files"
+                    }
+                ]
+            }
+        },
+        "/mail/inbox?page=1&pageSize=20": {
+            "get": {
+                "summery": "mail list that received",
+                "tags": [
+                    "Mail"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "number",
+                        "description": "Page for pagination"
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "type": "number",
+                        "description": "Rows for pagination"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get list of mail that received"
+                    }
+                }
+            }
+        },
+        "/mail/sent?page=1&pageSize=20": {
+            "get": {
+                "summery": "mail list that sent",
+                "tags": [
+                    "Mail"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "number",
+                        "description": "Page for pagination"
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "type": "number",
+                        "description": "Rows for pagination"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get list of mail that sent"
+                    }
+                }
+            }
+        },
+        "/mail": {
+            "put": {
+                "summery": "update mail of sent",
+                "tags": [
+                    "Mail"
+                ],
+                "parameters": [
+                    {
+                        "name": "mailId",
+                        "in": "param",
+                        "required": "true",
+                        "type": "array",
+                        "description": "mail id"
+                    },
+                    {
+                        "name": "action",
+                        "in": "param",
+                        "type": "string",
+                        "description": "action type"
+                    },
+                    {
+                        "name": "is_read",
+                        "in": "param",
+                        "type": "boolean",
+                        "description": "Mail read status"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update sent mail responses"
+                    }
+                }
+            }
+        },
+        "/mail/invite": {
+            "post": {
+                "summery": "To send invitation",
+                "tags": [
+                    "Mail"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "param",
+                        "type": "string",
+                        "description": "Destination email address to invite send"
+                    },
+                    {
+                        "name": "message",
+                        "in": "param",
+                        "type": "string",
+                        "description": "Description to inviate message"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Send invite response"
+                    }
+                }
+            }
+        },
+        "/mail/pending?page=1&pageSize=10": {
+            "get": {
+                "summery": "To get pending invite",
+                "tags": ["Mail"],
+                "responses": {
+                    "200": {
+                        "description": "Pending invite response"
+                    }
+                }
+            }
+        },
+        "/mail/resend/invite": {
+            "post": {
+                "summery": "Resend inviate",
+                "tags": ["Mail"],
+                "parameters": [
+                    {
+                        "name": "to",
+                        "in": "param",
+                        "type": "string",
+                        "description": "invite receiver's email address"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resend invite response"
+                    }
+                }
+            }
+        },
+        "/profile/edit": {
+            "put": {
+                "summery": "Edit User profile",
+                "tags": [
+                    "Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "about",
+                        "in": "param",
+                        "type": "string",
+                        "description": "About User"
+                    },
+                    {
+                        "name": "social",
+                        "in": "param",
+                        "type": "object",
+                        "description": "User's social media link {'facebook': 'https://facebook.com/username', 'twitter': 'https://www.twitter.com/username'}"
+                    },
+                    {
+                        "name": "notification",
+                        "in": "param",
+                        "type": "object",
+                        "description": "notification user alert: {'rate': true, 'follow': false, 'mention': true, 'favorite': true}"
+                    }
+                ]
+            }
+        },
+        "/profile": {
+            "get": {
+                "summery": "Get User Profile",
+                "tags": [
+                    "Profile"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Categroies for user register"
+                    }
+                }
+            }
+        },
+        "/profile/avatar": {
+            "put": {
+                "summery": "Update user Avatar",
+                "tags": [
+                    "Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "avatar",
+                        "in": "param",
+                        "type": "file",
+                        "description": "user avatar"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Avatar upload"
+                    }
+                }
+            }
+        },
+        "/profile/activity/{userid}?page=1&search=xx": {
+            "get": {
+                "summery": "View User profile",
+                "tags": [
+                    "Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "userid",
+                        "in": "path",
+                        "type": "string",
+                        "description": "user uuid"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "number",
+                        "description": "page number"
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "type": "string",
+                        "description": "search word"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Avatar upload"
+                    }
+                }
+            }
+        },
+        "/profile/post": {
+            "post": {
+                "summery": "Create Post",
+                "tags": [
+                    "Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "userid",
+                        "in": "param",
+                        "type": "string",
+                        "description": "to userid"
+                    },
+                    {
+                        "name": "content",
+                        "in": "param",
+                        "type": "string",
+                        "description": "post content"
+                    },
+                    {
+                        "name": "image",
+                        "in": "param",
+                        "type": "file",
+                        "description": "attach files(images)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Avatar upload"
+                    }
+                }
+            }
+        },
+        "/profile/header/{userid}": {
+            "get": {
+                "summery": "Get Profile Header",
+                "tags": [
+                    "Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "userid",
+                        "in": "path",
+                        "type": "string",
+                        "description": "user uuid"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Profile Header information"
+                    }
+                }
+            }
+        },
+        "/profile/followers/{userid}?page=0&search=username": {
+            "get": {
+                "summery": "Get followers",
+                "tags": [
+                    "Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "userid",
+                        "in": "path",
+                        "type": "string",
+                        "description": "user uuid"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "number",
+                        "description": "page"
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "type": "string",
+                        "description": "search query for username"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Followers"
+                    }
+                }
+            }
+        },
+        "/profile/follow/{followid}": {
+            "delete": {
+                "summery": "Delete follow",
+                "tags": [
+                    "Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "followid",
+                        "in": "path",
+                        "type": "string",
+                        "description": "follow uuid"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete Follow"
+                    }
+                }
+            }
+        },
+        "/profile/shootout/{userid}?page=0&search=xx": {
+            "get": {
+                "summery": "To get shoot out data",
+                "parameters": [
+                    {
+                        "name": "userid",
+                        "in": "path",
+                        "type": "string",
+                        "description": "profile userid"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "number",
+                        "description": "page number"
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "type": "string",
+                        "description": "search keyword"
+                    }
+                ],
+                "tags": ["Profile"],
+                "responses": {
+                    "200": {
+                        "description": "Get Followers"
+                    }
+                }
+            }
+        },
+        "/profile/like/{postid}": {
+            "put": {
+                "summery": "Like Post or Review",
+                "parameters": [
+                    {
+                        "name": "postid",
+                        "in": "path",
+                        "type": "string",
+                        "description": "postid to like"
+                    }
+                ],
+                "tags": ["Profile"],
+                "responses": {
+                    "200": {
+                        "description": "Get Followers"
+                    }
+                }
+            }
+        },
+        "/profile/image/all/{userid}?page=1&pageSize=10": {
+            "get": {
+                "summery": "View All Images on Post",
+                "tags": [
+                    "Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "userid",
+                        "in": "path",
+                        "type": "string",
+                        "description": "user uuid"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "number",
+                        "description": "page number"
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "type": "number",
+                        "description": "page rows"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Images"
+                    }
+                }
+            }
+        }
+    },
+    "consumes": [
+        "application/json"
+    ]
+}
