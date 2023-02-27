@@ -86,6 +86,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options))
 router(app);
 const server = http.createServer(app);
 Socket(server);
-server.listen(8080, () => {
-    console.log(`PinPoint Server is listening on port ${8080}`);
+server.listen(8081, () => {
+    console.log(`Poker Maven Server is listening on port ${8081}`);
 });
