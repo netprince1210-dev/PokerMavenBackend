@@ -6,14 +6,9 @@
         "url": "mongodb://127.0.0.1:27017/pinpoint"
     },
     "JWT_SECRET": "kayden",
-    "mailer": {
-        "service": "gmail",
-        "host": "smtp.gmail.com",
-        "port": 587,
-        "secure": false,
-        "auth": {
-            "user": "ameliagenius3@gmail.com",
-            "pass": "ysyxiprzkjrwzksd"
-        }
-    }
+    "POKER_URL": "http://localhost:80/api",
+    "POKER_PWD": "verity",
+    "avatarUrl": "/Image?Name=Avatars",
+    "avatarMax": 64,
+    "avatarSize": 32
 }
