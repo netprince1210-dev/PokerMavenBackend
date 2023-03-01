@@ -1,9 +1,10 @@
 const { stringify } = require('querystring');
-const fetch = require('node-fetch');
+const fetch = require('isomorphic-fetch');
+const config = require('../config');
 
-const baseUrl = process.env.POKER_MAVENS_URL;
-const pw = process.env.POKER_MAVENS_API_PASSWORD;
-const url = `${baseUrl}/api`;
+const baseUrl = config.POKER_URL;
+const pw = config.POKER_PWD;
+const url = baseUrl;
 
 async function PokerAPI(params) {
   const fetchParams = {
