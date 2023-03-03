@@ -3,7 +3,7 @@
     "port": "8080",
     "baseURL": "/api/v1",
     "db": {
-        "url": "mongodb://127.0.0.1:27017/pinpoint"
+        "url": "mongodb://127.0.0.1:27017/poker"
     },
     "JWT_SECRET": "kayden",
     "POKER_URL": "http://localhost:80/api",

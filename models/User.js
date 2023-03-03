@@ -2,28 +2,13 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
 
-    realname: {
-        first: { type: String, required: true },
-        last: { type: String, required: true }
-    },
-    username: { type: String, required: true },
-    birth: { type: Date },
+    name: { type: String, required: true },
+    password: {type: String, required: true},
     email: { type: String, required: true, minlength: 6, maxlength: 200, unique: true },
-    password: { type: String, minlength: 6, maxlength: 1024 },
     role: { type: Number, default: 0 },
-    verify: { type: Boolean, default: false },
-    address: {
-        city: { type: String },
-        state: { type: String }
-    },
-    usertype: { type: String, required: true },
-    category: { type: String, required: false },
-    profile: {
-        about: { type: String },
-        social: { type: Object },
-        notification: { type: Object },
-        avatar: { type: String }
-    }
+    location: { type: String },
+    avatar: { type: Number },
+    real_name: { type: String }
 },
     { timestamps: true },
 );
